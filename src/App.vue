@@ -5,7 +5,7 @@
       {{msg}}
     </p>
     <p v-else>
-      何か入力してくれ
+      no text
     </p>
     <input type="text" v-model="msg">
     <button @click="clear()">clear</button>
