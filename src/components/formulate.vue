@@ -36,4 +36,9 @@ export default {
 }
 </script>
 
+<style>
+.formulate-input-label {
+    color: blue;
+}
+</style>
 
