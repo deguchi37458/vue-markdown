@@ -1,0 +1,109 @@
+@charset "utf-8";
+$large-pc-max-width:1500px;
+/// デスクトップ表示用メディアクエリmixin
+/// @param {number} [$large-pc-max-width] - ブレークポイント
+@mixin large-mq-pc($min: $large-pc-max-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+$sp-ipad-max-width:1199px;
+$pc-ipad-min-width:1198px;
+/// スマートフォン表示用メディアクエリmixin
+/// @param {number} [$sp-ipad-max-width] - ブレークポイント
+@mixin ipad-mq-sp($max: $sp-ipad-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+/// デスクトップ表示用メディアクエリmixin
+/// @param {number} [$pc-ipad-max-width] - ブレークポイント
+@mixin ipad-mq-pc($min: $pc-ipad-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+$sp-ipad-mini-width:991px;
+$pc-ipad-mini-min-width:990px;
+/// スマートフォン表示用メディアクエリmixin
+/// @param {number} [$sp-ipad-mini-width] - ブレークポイント
+@mixin ipad-mini-mq-sp($max: $sp-ipad-mini-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+/// デスクトップ表示用メディアクエリmixin
+/// @param {number} [$pc-ipad-mini-min-width] - ブレークポイント
+@mixin ipad-mini-mq-pc($min: $pc-ipad-mini-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+$sp-max-width:768px;
+$pc-min-width:769px;
+/// スマートフォン表示用メディアクエリmixin
+/// @param {number} [$sp-max-width] - ブレークポイント
+@mixin mq-sp($max: $sp-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+/// デスクトップ表示用メディアクエリmixin
+/// @param {number} [$pc-max-width] - ブレークポイント
+@mixin mq-pc($min: $pc-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+$sp-mini-max-width:768px;
+$pc-mini-min-width:769px;
+/// スマートフォン表示用メディアクエリmixin
+/// @param {number} [$sp-mini-max-width] - ブレークポイント
+@mixin mini-mq-sp($max: $sp-mini-max-width) {
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+/// デスクトップ表示用メディアクエリmixin
+/// @param {number} [$pc-mini-max-width] - ブレークポイント
+@mixin mini-mq-pc($min: $pc-mini-min-width) {
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+// IEハック用mixin ////////////////////////////////////////////////////////////////////////////////
+@mixin hack($IE-ver: null) {
+  @if $IE-ver == 'lteIE8' { // IE8以下
+    @media \0screen\,screen\9 {
+      @content;
+    }
+  }
+  @else if $IE-ver == 'gteIE9' { // IE9以上
+    @media screen and (min-width:0\0) {
+      @content;
+    }
+  }
+  @else if $IE-ver == 'gteIE10' { // IE10以上
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      @content;
+    }
+  }
+  @else if $IE-ver == 'gteIE11' { // IE11以上
+    @at-root _:-ms-fullscreen,:root & {
+      @content;
+    }
+  }
+  @else if $IE-ver == 'notIE8' { // IE8じゃないとき(他のブラウザも含める)
+    @media all and (min-width: 0) {
+      @content;
+    }
+  }
+}
