@@ -9,8 +9,8 @@
     </p>
     <input type="text" v-model="msg">
     <button @click="clear()">clear</button>
-    <myfooter></myfooter>
     <formulate></formulate>
+    <myfooter></myfooter>
   </div>
 </template>
 

@@ -1,10 +1,14 @@
 <template>
-  <div>
-    ここはフッターです。
+  <div class="footer">
+    vue-project
   </div>
 </template>
+
 <style scoped>
-div {
-    color: red;
+.footer {
+  color: #fff;
+  text-align: center;
+  background-color: #4EBE8E;
+  padding: 10px;
 }
 </style>
