@@ -9,15 +9,21 @@
     </p>
     <input type="text" v-model="msg">
     <button @click="clear()">clear</button>
+    <myfooter></myfooter>
+    <formulate></formulate>
   </div>
 </template>
 
 <script>
 import myheader from './components/myheader'
+import myfooter from './components/myfooter'
+import formulate from './components/formulate'
 
 export default {
   components: {
-    myheader
+    myheader,
+    myfooter,
+    formulate
   },
   data () {
     return {
