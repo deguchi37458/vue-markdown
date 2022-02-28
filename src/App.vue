@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <myheader></myheader>
     <p v-if="msg.length > 0">
       {{msg}}
@@ -38,3 +38,9 @@ export default {
 }
 </script>
 
+<style scoped>
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+</style>
