@@ -1,8 +1,10 @@
 <template>
-  <div class="wrapper">
+  <div>
     <myheader></myheader>
-    <message></message>
-    <formulate></formulate>
+    <div class="wrapper">
+      <message></message>
+      <formulate></formulate>
+    </div>
     <myfooter></myfooter>
   </div>
 </template>
@@ -27,5 +29,6 @@ export default {
 .wrapper {
   width: 1000px;
   margin: 0 auto;
+  min-height: 90vh;
 }
 </style>
