@@ -1,44 +1,24 @@
 <template>
-  <div>
-    <FormulateInput
-      label="Change an input type"
-      type="radio"
-      :options="types"
-      v-model="type"
-    />
-    <FormulateInput
-      label="Favorite B10 football team?"
-      :type="type"
-      name="team"
-      :options="{nebraska: 'Nebraska', ohiost: 'Ohio St.', michigan: 'Michigan'}"
-      value="nebraska"
-      error-behavior="live"
-      validation="required|matches:nebraska"
-      validation-name="Team name"
-    />
-  </div>
+  <!-- some code condensed for display reasons -->
+  <FormulateForm
+    v-model="values"
+    @submit="handleLogin"
+  >
+    <h2>Login</h2>
+    <FormulateInput type="text" name="email" label="Email address" validation="required|email" />
+    <FormulateInput type="text" name="password" label="Password" validation="required" />
+    <FormulateInput name="terms" type="checkbox" label="I accept, just don't make me read the terms." validation="accepted" />
+    <FormulateInput type="submit" label="Login" />
+  </FormulateForm>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      type: 'select',
-      types: {
-        select: 'Select list',
-        radio: 'Radio list',
-        text: 'Text field',
-        textarea: 'Text area',
-        checkbox: 'checkbox',
-      }
-    }
-  }
-}
+export default { data () { return { values: {}, handleLogin: () => alert('Logged in') } } }
 </script>
 
 <style>
-.formulate-input-label {
-    color: blue;
+.formulate-input-error {
+  color: red;
 }
 </style>
 
