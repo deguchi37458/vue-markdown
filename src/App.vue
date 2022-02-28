@@ -1,14 +1,7 @@
 <template>
   <div class="wrapper">
     <myheader></myheader>
-    <p v-if="msg.length > 0">
-      {{msg}}
-    </p>
-    <p v-else>
-      no text
-    </p>
-    <input type="text" v-model="msg">
-    <button @click="clear()">clear</button>
+    <message></message>
     <formulate></formulate>
     <myfooter></myfooter>
   </div>
@@ -17,24 +10,16 @@
 <script>
 import myheader from './components/myheader'
 import myfooter from './components/myfooter'
+import message from './components/message'
 import formulate from './components/formulate'
 
 export default {
   components: {
     myheader,
     myfooter,
+    message,
     formulate
   },
-  data () {
-    return {
-      msg: 'Hello World!'
-    }
-  },
-  methods: {
-    clear () {
-      this.msg = ''
-    }
-  }
 }
 </script>
 
